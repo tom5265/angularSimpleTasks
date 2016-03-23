@@ -19,7 +19,16 @@ controllers.controller('TaskController', ['$scope', function($scope) {
 
     $scope.spanner = function() {
         var newSpan = angular.element('<span> Tom Moore </span>');
-        angular.element(newSpan).appendTo('#spanDiv');
+        newSpan.appendTo('#spanDiv');
     }
+    
+    $scope.addFriend = function () {
+       for (var i = 0; i < friends.length; i++) {
+            var frand = angular.element('<li>' + friends[i] + '</li>');
+            frand.appendTo('#friends');
+        }
+    }
+    
+    var friends = ['Mike', 'Carter', 'Jimbo', 'Will', 'Justin', 'Kevin', 'Charlie', 'Lee', 'Ian', 'George'];
 }]);
 
