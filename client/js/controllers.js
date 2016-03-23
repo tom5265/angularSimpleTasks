@@ -22,10 +22,15 @@ controllers.controller('TaskController', ['$scope', function($scope) {
         newSpan.appendTo('#spanDiv');
     }
     
-    $scope.addFriend = function () {
-       for (var i = 0; i < friends.length; i++) {
-            var frand = angular.element('<li>' + friends[i] + '</li>');
+    var counter = 0;
+    $scope.addFriend = function () {   
+       if (counter < 9) {
+            var frand = angular.element('<li>' + friends[counter] + '</li>');
             frand.appendTo('#friends');
+            counter++;
+        }
+        else {
+            alert("You don't have any more friends!");
         }
     }
     
